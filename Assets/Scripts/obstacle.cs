@@ -7,7 +7,7 @@ public class obstacle : MonoBehaviour
 
     int type;
     float size;
-    int score;
+    public int score;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class obstacle : MonoBehaviour
 
         if(type == 1) 
         {
-            size = 2.2f;
+            size = 1.7f;
             score = 2;
             GetComponent<SpriteRenderer>().color = new Color(100 / 255f, 100 / 255f, 255 / 255f, 255 / 255f);
         }
@@ -37,7 +37,7 @@ public class obstacle : MonoBehaviour
         }
         else 
         {
-            size = 3.8f;
+            size = 2.2f;
             score = 3;
             GetComponent<SpriteRenderer>().color = new Color(150 / 255f, 150 / 255f, 255 / 255f, 255 / 255f);
         }
@@ -54,7 +54,7 @@ public class obstacle : MonoBehaviour
     {
         if (coll.gameObject.tag == "balloon") 
         {
-            Debug.Log("끝!");
+            gameManager.i.endGame();
             Destroy(gameObject);
         }    
         
